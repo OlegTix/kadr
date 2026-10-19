@@ -53,7 +53,9 @@ mixes audio and muxes/transcodes per preset.
 
 ## Requirements
 - Node.js ≥ 20, system `ffmpeg`/`ffprobe` in PATH
-- Optional: `python3` + `faster-whisper` (speech-to-text), the `claude`
+- Optional: `python3` + `faster-whisper` with `av<19` (speech-to-text;
+  faster-whisper 1.2.1 passes `metadata_errors=` to `av.open()`, which
+  PyAV 19 removed — every file fails before decoding), the `claude`
   CLI (embedded AI assistant), network access for the one-time Remotion
   workspace install
 - Optional for voice-over: an ElevenLabs API key (entered in the app,
